@@ -7,8 +7,9 @@ VOLUME ["/data"]
 
 ENV SHELL /bin/bash
 
-ENTRYPOINT ["/bin/start", "/data"]
+# ENTRYPOINT ["/bin/start", "/data"]
+ENTRYPOINT ["/bin/bash"]
 CMD []
 
 EXPOSE 6461
-RUN npm install -g dat@6.8
+RUN npm install -g dat
