@@ -17,11 +17,11 @@ endif
 
 all: build tag
 
-run: build tag
+run: build
 	docker run $(RUN_ARGUMENTS) --net host -v $(HOME):/host --rm -it $(IMAGE)
 
 build:
 	docker build $(BUILD_ARGUMENTS) -t $(IMAGE) .
 
 tag:
-	docker tag dat $(IMAGE)
+	docker tag ${IMAGE} ${REGISTRY}${IMAGE}
